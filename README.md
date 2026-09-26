@@ -2,7 +2,7 @@
 
 A zero-cash-cost portfolio project for safer, explainable changes in NovaBill, a fictional multi-tenant contract-to-cash and utility-billing SaaS.
 
-> **Current state:** documentation and RuleTwin Phase 0 only. No API, UI, worker, database, or deployable product exists yet. Nothing here should be represented as production-ready.
+> **Current state:** RuleTwin Phase 0 is closed as a documentation gate, and Phase 1 design is next. No API, UI, worker, database, or deployable product exists yet. Nothing here should be represented as production-ready.
 
 ## Product sequence
 
@@ -14,7 +14,7 @@ The portfolio is fictional, synthetic-data-only, and unaffiliated with any emplo
 
 ## Current milestone
 
-RuleTwin Phase 0 charter, problem framing, workflow, metrics, synthetic scenario, risks, traceability, and implementation gates. Start with the [progress log](docs/progress.md), [implementation plan](docs/implementation-plan.md), and [requirements traceability](docs/requirements-traceability.md).
+Establish the separate RuleTwin repository and complete Phase 1 domain, data, API, architecture, threat, policy, and tenant/RBAC design there. This repository remains the portfolio index and milestone record. Start with the [progress log](docs/progress.md), [implementation plan](docs/implementation-plan.md), and [requirements traceability](docs/requirements-traceability.md).
 
 ## Documentation
 

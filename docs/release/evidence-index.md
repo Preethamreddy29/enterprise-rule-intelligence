@@ -21,6 +21,8 @@ The authoritative thresholds and rows are in [the release evidence matrix](../04
 | Economics | Future documented local resource/unit estimate | ₹0 cash target; no measured model |
 | Portfolio proof | Root README, demo, case study, defense/evidence | README and plan drafted; no running demo/case study |
 
+Phase 0 documentation was merged through [PR #1](https://github.com/Preethamreddy29/enterprise-rule-intelligence/pull/1) at merge commit `d4c5935`. This closes only the Phase 0 documentation gate; it does not satisfy any runtime or release hard gate below.
+
 ## RuleTwin Phase 0 exit audit — 2026-09-27
 
 This is a documentation-gate audit, not product validation or release evidence.
@@ -33,7 +35,7 @@ This is a documentation-gate audit, not product validation or release evidence.
 | Synthetic data can demonstrate tenant differences without employer information | Satisfied with design evidence | `synthetic-data-notice.md` and `synthetic-scenario.md` define three fictional tenants, candidate applicability, affected/no-delta/effective-date expectations, and provenance constraints. Executable fixtures remain Phase 2–3 work. |
 | At least three assumptions have falsification tests | Satisfied with evidence | `docs/product/problem-brief.md` records five unverified assumptions, falsification methods, and decisions if falsified. |
 
-No Phase 0 exit criterion is currently classified as partially satisfied, missing, or requiring a maintainer decision. Repository topology is accepted in ADR-001 and the restored blueprint was reviewed in superseded ADR-002. License, money/date semantics, authentication, retention, risk thresholds, and product-repository creation remain Phase 1/2 decisions rather than Phase 0 blockers.
+No Phase 0 exit criterion is classified as partially satisfied, missing, or requiring a maintainer decision. Repository topology is accepted in ADR-001 and the restored blueprint was reviewed in superseded ADR-002. PR #1 merged the evidence into `main` on 2026-09-27. License, money/date semantics, authentication, retention, risk thresholds, and product-repository creation remain Phase 1 decisions rather than Phase 0 blockers.
 
 ## RuleTwin release hard gates
 

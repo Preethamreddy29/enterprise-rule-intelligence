@@ -1,9 +1,9 @@
 # Progress and Status
 
 **As of:** 2026-09-27
-**Branch:** `feat/portfolio-foundation-ruletwin-phase0`
-**Milestone:** Portfolio foundation / RuleTwin Phase 0
-**Overall:** Phase 0 documentation exit gate satisfied; Git baseline established and Phase 0 branch prepared. No application implementation or test suite exists.
+**Branch:** `codex/phase0-closeout`
+**Milestone:** Portfolio foundation / RuleTwin Phase 0 closeout
+**Overall:** Phase 0 documentation exit gate is closed. PR #1 was merged into `main`; no application implementation or test suite exists. Phase 1 design is the next product milestone.
 
 ## Completed this milestone
 
@@ -16,6 +16,8 @@
 - Drafted RuleTwin Phase 0 charter, role-specific simulated discovery hypotheses (not actual interviews), current/future journey, PRD, success metrics, falsifiable assumptions, initial risk register, synthetic-data notice, architecture/context, initial threat model, repository proposal, setup/testing guidance, requirements traceability, phased plan, limitations, and release evidence index.
 - Audited every RuleTwin Phase 0 exit criterion. All five are satisfied with documentation/design evidence; no empirical, runtime, security, performance, or release validation is claimed.
 - Strengthened the signature scenario with three explicit fictional tenant configurations and qualitative affected/control/effective-date expectations.
+- Opened and merged PR #1, `docs: establish portfolio foundation and RuleTwin Phase 0`, into `main` on 2026-09-27.
+- Synchronized the local `main` branch to merge commit `d4c5935` and started this focused post-merge closeout branch.
 
 ## Files created/changed
 - Root: `README.md`, `.env.example`.
@@ -39,6 +41,8 @@
 - Current inventory contains 33 non-Git files: 32 Markdown documents plus `.env.example`. Source and Phase 0 content are being tracked through the approved focused commits.
 - Stale-claim and terminology scans found no active statement that the blueprint is absent or repository topology is unresolved. Historical wording remains only inside superseded ADR-002 context.
 - Tests: none available or run; repository is documentation-only. No tests are claimed as passed.
+- GitHub verification: `main` is the default branch; PR #1 is merged; secret protection and push protection are enabled.
+- Merge-method deviation: PR #1 used merge commit `d4c5935` with parents `69721b0` and `dabdb02`, although the plan called for squash merge. History will not be rewritten; repository settings will enforce the intended method for future PRs.
 
 ## Important decisions and assumptions
 
@@ -49,8 +53,7 @@
 
 ## Risks and blockers
 
-- **Open for repository administration:** verify/set `main` as default, enable squash merge and branch deletion, configure available branch protection/security settings, and open/review the Phase 0 PR.
-- **Open before Phase 2:** create/identify the separate RuleTwin repository and select its license.
+- **Open before authoritative Phase 1 work:** create/identify the separate RuleTwin repository and select its license.
 - No code, migrations, API contracts, executable synthetic generator, CI, runtime security control, or tests exist.
 - License, precise money/date semantics, auth, retention, risk thresholds, and local config remain unresolved.
 
@@ -61,15 +64,16 @@ The approved bootstrap uses a source baseline before the Phase 0 feature PR:
 1. Renamed the unborn local branch from `feat/portfolio-foundation-ruletwin-phase0` to `main`; kept the working tree unchanged.
 2. On `main`, stage only the supplied source set: `docs/README.md`, `docs/00_PORTFOLIO_ENGINEERING_HANDBOOK.md` through `docs/05_GITHUB_WORKFLOW_TEMPLATES.md`, and `docs/Technical_Product_Portfolio_Project_Blueprint.md`.
 3. Created initial commit `69721b0` — `docs: establish portfolio source baseline`.
-4. Pushed `main` to `origin`. Default-branch/protection/security configuration remains to be verified in GitHub.
+4. Pushed `main` to `origin`; GitHub now identifies `main` as the default branch.
 5. Created branch `docs/portfolio-foundation-ruletwin-phase0` from `main`.
 6. Staged the root README, `.env.example`, and Phase 0-derived documentation in focused commits:
    - `docs(product): add RuleTwin Phase 0 foundation`
    - `docs(architecture): define portfolio boundaries and delivery gates`
    - `docs(governance): add risks traceability and evidence status`
-7. Push the feature branch and open a PR to `main` titled `docs: establish portfolio foundation and RuleTwin Phase 0`.
-8. Attach the Markdown/link validation results, Phase 0 exit audit, synthetic-evidence disclaimer, and explicit statement that no runtime/tests exist. Review, then squash-merge only after required checks and manual approval.
+7. Pushed the feature branch and opened PR #1 to `main` titled `docs: establish portfolio foundation and RuleTwin Phase 0`.
+8. Attached the Markdown/link validation results, Phase 0 exit audit, synthetic-evidence disclaimer, and explicit statement that no runtime/tests exist.
+9. Merged PR #1 as merge commit `d4c5935`. This differed from the planned squash merge; retain the history and enforce the intended method for future PRs.
 
 ## Next action
 
-Complete remote repository administration and review/merge the Phase 0 PR. Phase 0 is ready to close as a documentation gate. The exact Phase 1 starting scope is RuleTwin domain vocabulary and invariants, money/effective-date semantics, ERD and lifecycle/retention model, versioned OpenAPI/error/idempotency contracts, eight required ADRs, complete STRIDE threat-to-test mapping, deterministic risk-policy model, and tenant/RBAC model. Do not create runtime code; authoritative RuleTwin product artifacts ultimately belong in the separate RuleTwin repository. DecisionTrace and BoundaryOps remain deferred.
+Establish the separate RuleTwin repository and begin Phase 1 design there. The exact starting scope is RuleTwin domain vocabulary and invariants, money/effective-date semantics, ERD and lifecycle/retention model, versioned OpenAPI/error/idempotency contracts, eight required ADRs, complete STRIDE threat-to-test mapping, deterministic risk-policy model, and tenant/RBAC model. Do not create runtime code until the Phase 1 gate passes. DecisionTrace and BoundaryOps remain deferred.
