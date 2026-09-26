@@ -1,6 +1,6 @@
 # Portfolio Implementation Plan and Gates
 
-This plan follows the handbook and product-specific runbooks. It is staged, not a promise of completion dates. Work stops or scope narrows when an exit gate fails. At present only portfolio/RuleTwin Phase 0 documentation is in scope.
+This plan follows the handbook and product-specific runbooks. It is staged, not a promise of completion dates. Work stops or scope narrows when an exit gate fails. RuleTwin Phase 0 closed on 2026-09-27 through merged PR #1; Phase 1 design is now the active product milestone.
 
 ## Portfolio dependency sequence
 
@@ -14,7 +14,7 @@ This plan follows the handbook and product-specific runbooks. It is staged, not 
 
 | Phase | Deliverables | Dependencies | Tests/evidence | Completion / decision gate |
 |---:|---|---|---|---|
-| 0 — Charter (content gate satisfied) | RuleTwin charter, problem brief, current/future journey, PRD-lite, metrics, risk register, synthetic scenario/notice, traceability, initial architecture/threat model and ADRs | Handbook/runbook/evidence matrix/blueprint reviewed; portfolio-index role confirmed | Phase 0 audit, evidence labels, assumptions with falsification methods; no runtime tests claimed | Specific user/problem, critical workflow, non-goals, synthetic three-tenant scenario, measurable metrics and at least 3 testable assumptions. Worth building? **Satisfied in documentation; Git baseline still awaits approval.** |
+| 0 — Charter (closed 2026-09-27) | RuleTwin charter, problem brief, current/future journey, PRD-lite, metrics, risk register, synthetic scenario/notice, traceability, initial architecture/threat model and ADRs | Handbook/runbook/evidence matrix/blueprint reviewed; portfolio-index role confirmed | Phase 0 audit, evidence labels, assumptions with falsification methods; no runtime tests claimed | **Passed as a documentation gate in PR #1.** Specific user/problem, critical workflow, non-goals, synthetic three-tenant scenario, measurable metrics and at least 3 testable assumptions are documented. No empirical or runtime validation is claimed. |
 | 1 — Requirements/architecture | Domain/data/API specifications, eight RuleTwin ADRs, NFR baselines, ERD, OpenAPI, threat-to-test mapping, policy and tenant model | Phase 0; repository topology and license decision | Schema/OpenAPI validation; threat review; traceability coverage | Safe/feasible design, high risks have controls/tests, all critical requirements traceable. |
 | 2 — Engineering foundation | Confirm RuleTwin repo; CI/tooling; Compose core stack; health/readiness; PostgreSQL migration/roles/seeds; request IDs/logging; worker/outbox skeleton; minimal readiness UI | Phase 1 contracts and approved repo boundary; local Docker/Python/Node | clean migration, DB up/down/forward policy, unhealthy readiness, error mapping, worker claims safely, non-root container, planted-secret scanner test | One documented command starts core; one runs checks; CI clean build; evidence recorded. No product claim. |
 | 3 — Vertical slice | One tenant, rounding, 100 deterministic events, baseline/candidate, impact, risk block/allow, author/approver, UI, audit | Phase 2; schema and API ready | canonicalization/property tests, idempotency, crash recovery, deterministic checksum, stale/self approval rejection, Playwright critical flow | End-to-end evidence path reproducible without manual DB edits. |
@@ -27,8 +27,8 @@ This plan follows the handbook and product-specific runbooks. It is staged, not 
 
 ## Active scope and deferred tasks
 
-**Now:** review and merge the Phase 0 documentation PR, then begin Phase 1 design. **Phase 1:** create RuleTwin-owned domain/data/API specifications, eight ADRs, ERD, OpenAPI, threat-to-test mapping, and policy/tenant models; these may be drafted in the portfolio only as planning inputs, while authoritative product artifacts must live in the separate RuleTwin repository. **Before Phase 2:** choose a license, establish the RuleTwin repository, and resolve domain semantics. **Not now:** RuleTwin runtime, DecisionTrace implementation, BoundaryOps runtime, Docker/dependency installation, or CI/runtime scaffolding.
+**Now:** establish the separate RuleTwin repository, select its license, and begin Phase 1 design. **Phase 1:** create RuleTwin-owned domain/data/API specifications, eight ADRs, ERD, OpenAPI, threat-to-test mapping, and policy/tenant models in that product repository. This portfolio repository may retain links and milestone summaries, but not authoritative product-owned contracts or runtime. **Before Phase 2:** pass the Phase 1 design gate and resolve domain semantics. **Not now:** RuleTwin runtime, DecisionTrace implementation, BoundaryOps runtime, Docker/dependency installation, or CI/runtime scaffolding.
 
 ## Delivery and review method
 
-Use short-lived feature branches, focused milestones, conventional commits only after a verifiable baseline exists, and no commit/push/PR without explicit approval. For each milestone record changed paths, exact commands/output, test results, assumptions, risks, and next gate in `docs/progress.md`. The proposed initial baseline and feature-branch sequence is recorded there; this turn does not execute it.
+Use short-lived feature branches, focused milestones, conventional commits only after a verifiable baseline exists, and no commit/push/PR without explicit approval. Prefer squash merge for future PRs. For each milestone record changed paths, exact commands/output, test results, assumptions, risks, and next gate in `docs/progress.md`.

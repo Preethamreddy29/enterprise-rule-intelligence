@@ -2,8 +2,8 @@
 
 ## Current limitations (2026-09-27)
 
-- Documentation/Phase 0 only: no application code, API, UI, worker, PostgreSQL schema, migrations, seed generator, tests, Compose stack, CI, telemetry, or release exists.
-- The portfolio source baseline is committed and pushed to `main`, and the Phase 0 feature branch is prepared. Default-branch confirmation, merge settings, branch protection/security settings, PR review, and merge still require GitHub-side verification.
+- Phase 0 is closed only as a documentation gate. No application code, API, UI, worker, PostgreSQL schema, migrations, seed generator, tests, Compose stack, CI, telemetry, or release exists.
+- The portfolio source baseline and Phase 0 documentation are merged into the default `main` branch through PR #1. The PR used a merge commit rather than the planned squash; history is retained and future merge policy must prevent recurrence.
 - The blueprint is present and reviewed; ADR-002 retains the earlier missing-source decision as superseded history.
 - No real users or customers were interviewed. All five role inputs are synthetic hypotheses, not evidence.
 - No performance, accuracy, cost, security, isolation, reliability, restore, or release gate has been measured or passed.
@@ -14,7 +14,7 @@
 ## Mitigation and decision gates
 
 - Keep all runtime behavior and completion claims explicitly marked planned.
-- Keep runtime and product-owned contracts out of this portfolio index; establish the separate RuleTwin repository before Phase 2.
+- Keep runtime and product-owned contracts out of this portfolio index; establish the separate RuleTwin repository before authoritative Phase 1 artifacts are created.
 - Obtain explicit approval before any commit, push, repository creation, pull request, or GitHub setting change.
 - Resolve Phase 1 design questions with ADRs, threat-to-test mapping, OpenAPI, data model, and evidence.
 - Never relax hard tenant-isolation, unsafe execution, dangerous false-safe, audit, or approval gates to satisfy a demo.
