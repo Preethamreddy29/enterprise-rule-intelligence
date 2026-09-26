@@ -2,7 +2,7 @@
 
 ## Current checkout
 
-The current branch contains execution documents plus Phase 0 planning artifacts only. Git has no commit history and all files are untracked. The maintainer confirmed on 2026-09-27 that this checkout is the portfolio index and planning repository; retain the supplied sources and do not place product runtime here.
+The `main` branch contains the supplied execution sources as the portfolio baseline. The Phase 0 branch contains portfolio/RuleTwin planning artifacts only. The maintainer confirmed on 2026-09-27 that this checkout is the portfolio index and planning repository; retain the supplied sources and do not place product runtime here.
 
 ## Portfolio standards
 
