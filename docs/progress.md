@@ -2,6 +2,10 @@
 
 ## Update — 2026-10-24
 
+DecisionTrace governed interactive v0.3 is committed at `a79a361` in its separate repository. A fictional author can add and correct a text source, draft a decision tied to its exact version, and hand it to a different fictional auditor for approval. The UI then shows the approved answer and opens its source passage. The local end-to-end check covers versioning, idempotency, self/stale approval rejection, historical answers, stale evidence, tenant/role controls, and transactional audit/outbox records. The prior 25 seed and 14 paraphrase checks still pass. See [the v0.3 release note](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v03-governed-workflow.md). The full Phase 3 product gate and RuleTwin integration remain open.
+
+### Earlier interactive v0.2 record
+
 DecisionTrace interactive v0.2 is committed at `950047c` in its separate repository. The local demo at `http://127.0.0.1:5174` now accepts bounded manual-override questions with valid and recorded time controls; a server-derived fictional identity controls tenant and role; answers open exact source passages. The original 25-case evaluation and 14 newly frozen paraphrase cases pass, along with worker/database smoke and live OpenAPI response checks. The [clean GitHub Actions run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40081423687) passed; see [the v0.2 release note](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v02-interactive-demo.md). The full Phase 3 product gate and RuleTwin integration remain open.
 
 ### Earlier foundation and curated preview record

@@ -7,7 +7,7 @@ A zero-cash-cost portfolio project for safer, explainable changes in NovaBill, a
 ## Product sequence
 
 1. **RuleTwin** — replay historical or deterministic synthetic events against current and proposed tenant-specific rules; compare outcomes and produce review evidence.
-2. **DecisionTrace** — standalone work began in its [separate repository](https://github.com/Preethamreddy29/decisiontrace) on 2026-10-23. Its Phase 0 corpus, Phase 1 design, and Phase 2 local foundation gates are complete. An interactive v0.2 synthetic demo now supports questions, valid and recorded time controls, demo identities, and exact source drill-down. The full Phase 3 product gate and RuleTwin integration remain open.
+2. **DecisionTrace** — standalone work began in its [separate repository](https://github.com/Preethamreddy29/decisiontrace) on 2026-10-23. Its Phase 0 corpus, Phase 1 design, and Phase 2 local foundation gates are complete. The interactive v0.3 synthetic demo adds text-source versioning, decision draft and independent review, historical answers, and exact source drill-down. The full Phase 3 product gate and RuleTwin integration remain open.
 3. **BoundaryOps** — later, investigate exceptions using only versioned RuleTwin/DecisionTrace contracts; deterministic code controls authorization, approvals, actions, verification, rollback, budgets, and termination. Not started. Runtime work is blocked until both upstream v1 contracts and mock consumer tests exist.
 
 The portfolio is fictional, synthetic-data-only, and unaffiliated with any employer or customer. See [the synthetic-data notice](docs/product/synthetic-data-notice.md).
