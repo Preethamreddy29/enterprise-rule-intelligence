@@ -2,6 +2,10 @@
 
 ## Update — 2026-10-24
 
+DecisionTrace interactive v0.2 is committed at `950047c` in its separate repository. The local demo at `http://127.0.0.1:5174` now accepts bounded manual-override questions with valid and recorded time controls; a server-derived fictional identity controls tenant and role; answers open exact source passages. The original 25-case evaluation and 14 newly frozen paraphrase cases pass, along with worker/database smoke and live OpenAPI response checks. The [clean GitHub Actions run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40081423687) passed; see [the v0.2 release note](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v02-interactive-demo.md). The full Phase 3 product gate and RuleTwin integration remain open.
+
+### Earlier foundation and curated preview record
+
 DecisionTrace continued in its separate repository. Phase 0 produced a versioned fictional corpus with 14 source versions and 25 labeled questions; Phase 1 produced the temporal/data/API/threat design and passed its design gate. Phase 2 has a locally running PostgreSQL/API/worker/web foundation with migration, seed, health, worker-ping, and failure/recovery checks. The clean GitHub Actions foundation run passed, and the Phase 2 gate is recorded in the DecisionTrace repository at `9ff98d2`. A curated synthetic historical-answer preview at `9fe787e` compares timelines and opens cited source versions; its 25 seed prompts pass local and clean-runner status/citation checks. The full Phase 3 product gate and RuleTwin connection remain open.
 
 ## Update — 2026-10-23
