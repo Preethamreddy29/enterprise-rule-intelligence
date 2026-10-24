@@ -9,10 +9,10 @@ NovaBill is a fictional shared multi-tenant contract-to-cash/utility-billing env
 | Product | Owns | Does not own |
 |---|---|---|
 | RuleTwin (first) | Immutable rule versions, synthetic replay datasets, simulation jobs/results, impact, deterministic risk evaluations, approvals/gates, audit. | Billing execution, production writes, another product's data store. |
-| DecisionTrace (later) | Versioned evidence, temporal decisions, relationships, authorized retrieval and drift. | RuleTwin database or autonomous production actions. |
+| DecisionTrace (standalone work started) | Versioned evidence, temporal decisions, relationships, authorized retrieval and drift. | RuleTwin database or autonomous production actions. |
 | BoundaryOps (later) | Exception workflows, typed tool calls, policy/approval/action ledger, verification and rollback evidence. | Upstream databases or authority decisions delegated to a model. |
 
-BoundaryOps may call only versioned RuleTwin and DecisionTrace APIs/contracts, never internal packages or databases. It must be mock-tested against both contracts before runtime integration. DecisionTrace does not start until RuleTwin has a tagged local production v1 under the required sequence.
+BoundaryOps may call only versioned RuleTwin and DecisionTrace APIs/contracts, never internal packages or databases. It must be mock-tested against both contracts before runtime integration. By maintainer direction on 2026-10-23, DecisionTrace standalone development proceeds in parallel with RuleTwin. Cross-product integration waits for a stable RuleTwin evidence contract and passing consumer tests.
 
 ## Future product flow
 

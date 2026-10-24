@@ -1,5 +1,13 @@
 # Progress and Status
 
+## Update — 2026-10-24
+
+DecisionTrace continued in its separate repository. Phase 0 produced a versioned fictional corpus with 14 source versions and 25 labeled questions; Phase 1 produced the temporal/data/API/threat design and passed its design gate. Phase 2 has a locally running PostgreSQL/API/worker/web foundation with migration, seed, health, worker-ping, and failure/recovery checks. Its CI/clean-clone gate is still open. No historical cited-answer demo or RuleTwin connection exists. The DecisionTrace foundation was committed and pushed to its public GitHub repository at `b52ffaf`.
+
+## Update — 2026-10-23
+
+The maintainer directed DecisionTrace to begin standalone development in parallel with RuleTwin. The separate local DecisionTrace folder and [GitHub repository](https://github.com/Preethamreddy29/decisiontrace) were empty at inspection. Its Phase 0 product/corpus/temporal drafts were started locally. This changes the earlier sequence below, which remains as historical Phase 0 closeout evidence. No DecisionTrace runtime, demo, or RuleTwin integration exists yet. RuleTwin's status in this portfolio checkout remains Phase 0 documentation complete only.
+
 **As of:** 2026-09-27
 **Branch:** `codex/phase0-closeout`
 **Milestone:** Portfolio foundation / RuleTwin Phase 0 closeout

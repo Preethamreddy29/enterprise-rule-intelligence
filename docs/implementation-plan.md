@@ -6,7 +6,7 @@ This plan follows the handbook and product-specific runbooks. It is staged, not 
 
 1. Portfolio engineering foundation and RuleTwin Phase 0–1.
 2. RuleTwin Phase 2–9 through tagged local production v1.
-3. DecisionTrace Phase 0–9 only after RuleTwin v1; no work started now.
+3. DecisionTrace standalone Phase 0 and subsequent design/demo work may proceed in parallel in its separate repository by maintainer direction on 2026-10-23. Integration with RuleTwin waits for a stable versioned evidence contract and consumer tests; neither product may claim an integrated demo before those pass.
 4. BoundaryOps product discovery may be planned later, but runtime implementation waits for tagged RuleTwin and DecisionTrace v1 contracts, example fixtures, and passing mock consumer contract tests.
 5. Integrated release/demo/evidence only after each product independently satisfies its gates.
 
@@ -27,7 +27,7 @@ This plan follows the handbook and product-specific runbooks. It is staged, not 
 
 ## Active scope and deferred tasks
 
-**Now:** establish the separate RuleTwin repository, select its license, and begin Phase 1 design. **Phase 1:** create RuleTwin-owned domain/data/API specifications, eight ADRs, ERD, OpenAPI, threat-to-test mapping, and policy/tenant models in that product repository. This portfolio repository may retain links and milestone summaries, but not authoritative product-owned contracts or runtime. **Before Phase 2:** pass the Phase 1 design gate and resolve domain semantics. **Not now:** RuleTwin runtime, DecisionTrace implementation, BoundaryOps runtime, Docker/dependency installation, or CI/runtime scaffolding.
+**Now:** establish the separate RuleTwin repository, select its license, and begin Phase 1 design there. In parallel, DecisionTrace has completed its local Phase 0 corpus and Phase 1 design gates and is building its Phase 2 local foundation in a separate repository. **RuleTwin Phase 1:** create product-owned domain/data/API specifications, eight ADRs, ERD, OpenAPI, threat-to-test mapping, and policy/tenant models. This portfolio repository retains links and milestone summaries, not product-owned contracts or runtime. **Before RuleTwin Phase 2:** pass its Phase 1 design gate and resolve domain semantics. **DecisionTrace integration:** wait for a stable RuleTwin evidence contract and passing consumer tests. **Not now:** BoundaryOps runtime or unsupported integrated-demo claims.
 
 ## Delivery and review method
 
