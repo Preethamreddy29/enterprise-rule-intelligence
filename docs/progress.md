@@ -2,7 +2,7 @@
 
 ## Update — 2026-10-24
 
-DecisionTrace continued in its separate repository. Phase 0 produced a versioned fictional corpus with 14 source versions and 25 labeled questions; Phase 1 produced the temporal/data/API/threat design and passed its design gate. Phase 2 has a locally running PostgreSQL/API/worker/web foundation with migration, seed, health, worker-ping, and failure/recovery checks. Its CI/clean-clone gate is still open. No historical cited-answer demo or RuleTwin connection exists. The DecisionTrace foundation was committed and pushed to its public GitHub repository at `b52ffaf`.
+DecisionTrace continued in its separate repository. Phase 0 produced a versioned fictional corpus with 14 source versions and 25 labeled questions; Phase 1 produced the temporal/data/API/threat design and passed its design gate. Phase 2 has a locally running PostgreSQL/API/worker/web foundation with migration, seed, health, worker-ping, and failure/recovery checks. The clean GitHub Actions foundation run passed, and the Phase 2 gate is recorded in the DecisionTrace repository at `9ff98d2`. No historical cited-answer demo or RuleTwin connection exists.
 
 ## Update — 2026-10-23
 
