@@ -1,5 +1,9 @@
 # Progress and Status
 
+## Update — 2026-10-25
+
+DecisionTrace structured-evidence v0.4 is committed at [`a800799`](https://github.com/Preethamreddy29/decisiontrace/commit/a800799dcc4e9c9b757f17456a5e3fcff6bea69c) in its separate repository. Markdown headings, transcript turns, and JSON paths now have deterministic section IDs and exact source spans. The fictional invoice-hold scenario adds a second independently reviewed demo topic; the browser opens the authorized section and highlights the cited sentence. Static checks, the database/worker smoke, 25 seed cases, 14 v0.2 paraphrases, v0.3 workflow, and v0.4 section/citation checks passed locally. [GitHub CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40150848732) passed, including the formal API contract and live checks. See [the v0.4 release note](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v04-structured-evidence.md). The full Phase 3 product gate remains open: production identity, independent answer evaluation, file/connector ingestion, bounded chunk indexing, and RuleTwin integration are pending.
+
 ## Update — 2026-10-24
 
 DecisionTrace governed interactive v0.3 is committed at `a79a361` in its separate repository. A fictional author can add and correct a text source, draft a decision tied to its exact version, and hand it to a different fictional auditor for approval. The UI then shows the approved answer and opens its source passage. The local end-to-end check covers versioning, idempotency, self/stale approval rejection, historical answers, stale evidence, tenant/role controls, and transactional audit/outbox records. The prior 25 seed and 14 paraphrase checks still pass. See [the v0.3 release note](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v03-governed-workflow.md). The full Phase 3 product gate and RuleTwin integration remain open.
