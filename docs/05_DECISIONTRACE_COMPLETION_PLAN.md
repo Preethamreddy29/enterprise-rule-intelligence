@@ -1,11 +1,11 @@
 # DecisionTrace completion plan and runbook reconciliation
 
-**Reviewed:** 2026-10-26
-**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`bea2fb8`](https://github.com/Preethamreddy29/decisiontrace/commit/bea2fb8c66f590a7bed4b89fa48d50f7b55dfdf3). Its [CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40215461448) passed. This is a scope and evidence assessment, not a v1 release claim.
+**Reviewed:** 2026-10-27
+**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`4534e89`](https://github.com/Preethamreddy29/decisiontrace/commit/4534e897858113276114a536a8e7701dd5a56d94). Its [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40385287627) passed. This is a scope and evidence assessment, not a v1 release claim.
 
 ## Assessment
 
-The project follows the portfolio's **separate-repository and parallel standalone development** decision. Phase 0 corpus and Phase 1 design gates have evidence. A local foundation and a useful fictional v0.6 demo run in CI. The version number is a preview identifier: it does **not** mean the runbook's `v0.5.0-alpha-mvp` deployment or Phase 4 exit gate has passed.
+The project follows the portfolio's **separate-repository and parallel standalone development** decision. Phase 0 corpus and Phase 1 design gates have evidence. A local foundation and a useful fictional v0.6 demo run in CI. Stage A outbox and concurrent revocation checks now pass, and the first Stage B full-text retrieval slice is in place. The version number is a preview identifier: it does **not** mean the runbook's `v0.5.0-alpha-mvp` deployment or Phase 4 exit gate has passed.
 
 The implementation diverged from the full runbook by delivering a deterministic two-topic demo before the planned general retrieval/model pipeline. This made the historical decision and citation workflow demonstrable early, but leaves the central v1 retrieval, extraction, evaluation, and operations work ahead. The Phase 2 gate record explicitly covers the local core stack; the broader Phase 2 runbook items (pgvector, artifact/model adapters, stage telemetry) are not yet complete.
 
@@ -13,16 +13,16 @@ The implementation diverged from the full runbook by delivering a deterministic 
 |---|---|---|
 | 0 — Charter/corpus | Licensed six-month fictional seed, 14 source versions, 25 specified questions, checksum manifest | Passed seed gate; 100+ reviewed gold set is later work. |
 | 1 — Design/threats | Temporal model, API/event drafts, ten ADRs, threat map | Design gate passed; contracts and threat tests must track the expanded runtime. |
-| 2 — Foundation | PostgreSQL/API/worker/web Compose, checksummed migrations, seed, health and CI | Local core passed; pgvector/full-text search, artifact storage, local model profile, full ingestion states, and telemetry remain. |
+| 2 — Foundation | PostgreSQL/API/worker/web Compose, checksummed migrations, seed, health and CI; authorized temporal full-text chunk search | Local core passed; pgvector, artifact storage, local model profile, full ingestion states, and telemetry remain. |
 | 3 — Temporal cited answer | Valid/recorded-time controls, approved decision versions, bounded exact citations, abstention and a fictional demo | Preview works; hybrid retrieval, structured generation, verifier pipeline, independently reviewed labels, and real issuer test remain. |
 | 4 — Full MVP | Markdown/transcript/JSON intake, source sections, three change-watch relation types, independent approval, source revocation | Partial; extraction review, complete decision fields/relations, full source adapters, semantic drift, dashboard, exports, and 100+ questions remain. |
 | 5 — Security/failure | Server-derived tenant/role, input bounds, some isolation/revocation checks | Partial; full authorization matrix, lineage deletion/retention, adversarial set, race/failure drills, and degraded-mode guarantees remain. |
 | 6 — Evaluation/observability | 25 seed prompts, 14 paraphrases, 20 agent-authored draft holdout cases, local/CI checks | Release evaluation open; independent labels, 100+ cases, pipeline comparisons, slice metrics, latency/memory and monitoring remain. |
 | 7–9 — RC, v1, proof | Demo guide and preview release notes | Open; backup/restore, rollback, clean-machine RC, exact image promotion, tagged v1, case study and cost model remain. |
 
-## Immediate reliability correction
+## Stage A reliability checkpoint
 
-The current worker accepts only the original foundation/source/decision event types in `api/app/worker.py`. Newer connector, source-revocation, and change-watch mutations write outbox records, but the worker marks unsupported types `dead_letter`. The v0.6 checks prove audit/outbox **insertion**, not delivery. Fix and test every emitted event type before building more event-driven ingestion or claiming outbox completion. Also reconcile the design event schema with actual outbox payloads, and verify revocation under concurrent query, retry, reindex, and backup restore.
+The worker now validates and acknowledges every current local event type; unknown, malformed, and future-version events dead-letter by design. A safe replay command handles known valid old dead letters, and the local outbox schema matches its runtime envelope. [Outbox CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) and [concurrent revocation CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661) pass. `done` means local validation and acknowledgement, not external delivery. Manual UI review, a clean local stack run, and backup/restore revocation evidence remain before Stage A can be treated as fully closed.
 
 ## Build sequence and exit gates
 
@@ -47,4 +47,4 @@ Each stage should be a focused release candidate with a clean CI run, reproducib
 
 ## First next checkpoint
 
-Complete stage A, then demonstrate one end-to-end source through the versioned full-text/vector pipeline with authorized temporal retrieval (stage B/C vertical slice). Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current v0.6 demo results.
+Finish Stage A's manual and recovery checks. Continue Stage B from the [authorized full-text chunk search](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v08-full-text-foundation.md) to a pinned vector profile, compatible rebuild, and measured hybrid retrieval. Then demonstrate one end-to-end source through the versioned full-text/vector pipeline with authorized temporal retrieval (Stage B/C vertical slice). Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.

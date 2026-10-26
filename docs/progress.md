@@ -1,5 +1,9 @@
 # Progress and Status
 
+## Update — 2026-10-27, DecisionTrace reliability and search foundation
+
+DecisionTrace's local outbox now validates all current event types, versions and payloads, with safe replay of known valid dead letters. The [outbox CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) passed. Tenant-scoped ordering between evidence reads and revocation passed the [concurrency CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661). An internal PostgreSQL full-text search now indexes exact source chunks and filters candidates by tenant, role, valid time, recorded time, supersession and revocation. The [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40385287627) passed at `4534e89`, including the new search check. The existing deterministic demo answer path remains the baseline. The [completion plan](05_DECISIONTRACE_COMPLETION_PLAN.md) records the remaining Stage A manual/recovery checks, Stage B vector/model/telemetry work, and later v1 gates. No full MVP or v1 gate is claimed.
+
 ## Update — 2026-10-26, RuleTwin status reconciliation
 
 The portfolio index was reconciled with the separate [RuleTwin repository](https://github.com/Preethamreddy29/ruletwin). RuleTwin Phases 1–3 and the bounded Phase 4A multi-tenant authorization increment are complete. Tenant-authorized deterministic evidence export is merged through PR #21 at `257e604`. [PR #22](https://github.com/Preethamreddy29/ruletwin/pull/22) at `1a4c240` implements a provider-neutral OIDC verification foundation and currently has five passing GitHub CI checks; it remains outside `main` until merged.
