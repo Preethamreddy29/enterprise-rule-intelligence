@@ -28,7 +28,7 @@ flowchart TD
     RT -. optional evidence event; no DB sharing .-> DT
 ```
 
-This diagram describes target boundaries, not deployed components. There is currently no runtime.
+This diagram remains the target cross-product boundary. RuleTwin and DecisionTrace now have separate local runtimes; BoundaryOps and cross-product integration do not exist. Neither product may connect directly to the other's database.
 
 ## Trust/security boundaries
 
@@ -48,6 +48,6 @@ This diagram describes target boundaries, not deployed components. There is curr
 5. Reviewer inspects bounded tenant-scoped impact; approval is bound to exact evidence and separated from proposal author.
 6. Append-only audit records protected transitions. Reproducibility uses engine, rule, dataset, and policy versions/checksums.
 
-## Planned stack (not installed or implemented)
+## Product stack status
 
-React/TypeScript/Vite web; Python/FastAPI modular monolith API and separate worker process; PostgreSQL; transactional outbox polling without managed broker; Docker Compose locally. OpenAPI synchronous contracts, JSON Schema event contracts. Storage for large artifacts and observability profiles are Phase 1/2 choices; do not pretend they are configured.
+RuleTwin implements a React/TypeScript/Vite web application, Python/FastAPI modular-monolith API, separate worker, PostgreSQL, transactional outbox polling, Docker Compose, OpenAPI, structured logs and a Prometheus profile. Large-result artifact storage, complete event contracts, centralized telemetry, alerts and hosted operations remain incomplete. DecisionTrace owns its own runtime and database. This portfolio repository contains milestone summaries and governing documents only.

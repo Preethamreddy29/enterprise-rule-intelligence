@@ -2,19 +2,19 @@
 
 A zero-cash-cost portfolio project for safer, explainable changes in NovaBill, a fictional multi-tenant contract-to-cash and utility-billing SaaS.
 
-> **Current state:** RuleTwin Phase 0 is closed as a documentation gate, and Phase 1 design is next. This portfolio repository contains no product runtime. DecisionTrace has a separate local interactive demo, but neither product is production-ready or integrated with the other.
+> **Current state:** RuleTwin Phases 0–3 and the bounded Phase 4A tenant-authorization increment are complete in its [separate repository](https://github.com/Preethamreddy29/ruletwin). Tenant-authorized evidence export is merged, and a provider-neutral OIDC verification foundation is awaiting merge in [PR #22](https://github.com/Preethamreddy29/ruletwin/pull/22) with all five CI checks passing. RuleTwin is a validated synthetic-data local demonstration, not an externally hosted pilot or production-ready service. DecisionTrace also continues independently; the products are not integrated.
 
 ## Product sequence
 
 1. **RuleTwin** — replay historical or deterministic synthetic events against current and proposed tenant-specific rules; compare outcomes and produce review evidence.
-2. **DecisionTrace** — standalone work began in its [separate repository](https://github.com/Preethamreddy29/decisiontrace) on 2026-10-23. Its Phase 0 corpus, Phase 1 design, and Phase 2 local foundation gates are complete. The interactive v0.4 synthetic demo adds structured source sections, a second independently reviewed topic, historical answers, and exact section citations. The full Phase 3 product gate and RuleTwin integration remain open.
+2. **DecisionTrace** — standalone work began in its [separate repository](https://github.com/Preethamreddy29/decisiontrace) on 2026-10-23. Its Phase 0 corpus, Phase 1 design, and narrowed Phase 2 local foundation gates are complete. Its current synthetic preview and remaining completion gates are summarized in the [DecisionTrace completion plan](docs/05_DECISIONTRACE_COMPLETION_PLAN.md). The full Phase 3 and Phase 4 gates and RuleTwin integration remain open.
 3. **BoundaryOps** — later, investigate exceptions using only versioned RuleTwin/DecisionTrace contracts; deterministic code controls authorization, approvals, actions, verification, rollback, budgets, and termination. Not started. Runtime work is blocked until both upstream v1 contracts and mock consumer tests exist.
 
 The portfolio is fictional, synthetic-data-only, and unaffiliated with any employer or customer. See [the synthetic-data notice](docs/product/synthetic-data-notice.md).
 
 ## Current milestone
 
-Establish the separate RuleTwin repository and complete Phase 1 domain, data, API, architecture, threat, policy, and tenant/RBAC design there. This repository remains the portfolio index and milestone record. Start with the [progress log](docs/progress.md), [implementation plan](docs/implementation-plan.md), and [requirements traceability](docs/requirements-traceability.md).
+Finish RuleTwin's controlled synthetic-data pilot without claiming that the original full Phase 4–8 gates are closed. The immediate sequence is: merge the validated OIDC foundation, complete provider login/logout, prove full exposed-surface isolation and resource controls, add operations/deployment/recovery evidence, and publish a pilot release only after its gate passes. The remaining four rule families and full-v1 breadth follow as separate Phase 4 work. This repository remains the portfolio index and milestone record. Start with the [progress log](docs/progress.md), [implementation plan](docs/implementation-plan.md), and [requirements traceability](docs/requirements-traceability.md).
 
 ## Documentation
 
@@ -30,7 +30,7 @@ Establish the separate RuleTwin repository and complete Phase 1 domain, data, AP
 
 ## Local use today
 
-This milestone is documentation-only. No environment variables, runtime services, or Python/Node dependencies are required. The `.env.example` intentionally contains no credentials or invented runtime configuration. See [local setup](docs/architecture/local-setup.md) for the planned development environment and future clean-clone gate.
+This portfolio repository remains documentation-only. The runnable products live in their own repositories. RuleTwin currently provides a Docker Compose local demonstration of its deterministic rounding workflow, authorization boundary, audit trail, and evidence export; its exact setup and validation instructions are owned by the RuleTwin repository. The portfolio `.env.example` intentionally contains no product credentials.
 
 ## Engineering constraints
 

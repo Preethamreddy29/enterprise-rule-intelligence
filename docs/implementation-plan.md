@@ -1,6 +1,6 @@
 # Portfolio Implementation Plan and Gates
 
-This plan follows the handbook and product-specific runbooks. It is staged, not a promise of completion dates. Work stops or scope narrows when an exit gate fails. RuleTwin Phase 0 closed on 2026-09-27 through merged PR #1; Phase 1 design is now the active product milestone.
+This plan follows the handbook and product-specific runbooks. It is staged, not a promise of completion dates. Work stops or scope narrows when an exit gate fails. RuleTwin Phase 0 closed on 2026-09-27 through merged PR #1. In the separate RuleTwin repository, Phases 1–3 and the bounded Phase 4A tenant-authorization increment are complete; the full Phase 4–8 gates remain open.
 
 ## Portfolio dependency sequence
 
@@ -27,7 +27,9 @@ This plan follows the handbook and product-specific runbooks. It is staged, not 
 
 ## Active scope and deferred tasks
 
-**Now:** RuleTwin and DecisionTrace continue in separate repositories by maintainer direction. DecisionTrace has completed its Phase 0 corpus, Phase 1 design, and narrowed Phase 2 local-core gates. Its interactive v0.6 synthetic preview adds reviewed downstream source-version watches and source revocation to the earlier intake, identity, review, and citation demo. The full Phase 3 and Phase 4 runbook gates remain open; [the 2026-10-26 completion plan](05_DECISIONTRACE_COMPLETION_PLAN.md) maps the missing pipeline, MVP, evaluation, security, and release work. The original RuleTwin sequence below remains historical; RuleTwin status must be read from its own repository. This portfolio repository retains links and milestone summaries, not product-owned contracts or runtime. DecisionTrace ↔ RuleTwin integration waits for a stable RuleTwin evidence contract and consumer tests. BoundaryOps runtime remains gated on both products' stable contracts.
+**Now:** RuleTwin and DecisionTrace continue in separate repositories by maintainer direction. RuleTwin has completed Phases 1–3, Phase 4A tenant authorization, and tenant-authorized evidence export. [RuleTwin PR #22](https://github.com/Preethamreddy29/ruletwin/pull/22) contains a locally validated provider-neutral OIDC verification foundation and has five passing clean-runner checks; it remains outside `main` until merged. Controlled-pilot work is a deliberately narrowed release track around the implemented rounding workflow and does not close the original full Phase 4–8 gates. After OIDC provider integration, the pilot still requires full exposed-surface isolation, resource controls, deployment, secrets, recovery, operations, supply-chain, performance, accessibility, and acceptance evidence. The remaining four rule families, dependency graph, third tenant, richer impact dimensions, webhook, reproduction, and pagination remain full Phase 4 work.
+
+DecisionTrace has completed its Phase 0 corpus, Phase 1 design, and narrowed Phase 2 local-core gates. Its interactive v0.6 synthetic preview adds reviewed downstream source-version watches and source revocation to the earlier intake, identity, review, and citation demo. The full Phase 3 and Phase 4 runbook gates remain open; [the 2026-10-26 completion plan](05_DECISIONTRACE_COMPLETION_PLAN.md) maps the missing pipeline, MVP, evaluation, security, and release work. This portfolio repository retains links and milestone summaries, not product-owned contracts or runtime. DecisionTrace ↔ RuleTwin integration waits for a stable RuleTwin evidence contract and consumer tests. BoundaryOps runtime remains gated on both products' stable contracts.
 
 ## Delivery and review method
 

@@ -1,5 +1,13 @@
 # Progress and Status
 
+## Update — 2026-10-26, RuleTwin status reconciliation
+
+The portfolio index was reconciled with the separate [RuleTwin repository](https://github.com/Preethamreddy29/ruletwin). RuleTwin Phases 1–3 and the bounded Phase 4A multi-tenant authorization increment are complete. Tenant-authorized deterministic evidence export is merged through PR #21 at `257e604`. [PR #22](https://github.com/Preethamreddy29/ruletwin/pull/22) at `1a4c240` implements a provider-neutral OIDC verification foundation and currently has five passing GitHub CI checks; it remains outside `main` until merged.
+
+The current product is a validated synthetic-data local demonstration, not an externally hosted pilot or production release. Only the rounding rule family and two fictional tenants are implemented. The controlled-pilot track intentionally narrows scope around that workflow and does not close the original full Phase 4–8 gates. Provider login/logout, complete exposed-surface isolation, resource controls, deployment, secrets, backup/restore/rollback, operational alerts, SBOM/release artifacts, accessibility, reference-profile performance, the remaining four rule families, dependency analysis, third tenant, richer impact dimensions, webhook and evidence reproduction remain open.
+
+The next ordered RuleTwin milestones are: merge PR #22; complete provider-specific PKCE login/logout and invited-user provisioning; prove pilot surface isolation and resource limits; add observability, deployment, secret management and recovery; execute pilot acceptance and publish an immutable pilot release; then return to the remaining full-v1 Phase 4–9 scope. BoundaryOps remains deferred, and DecisionTrace integration remains blocked on stable versioned contracts and consumer tests.
+
 ## Update — 2026-10-26, DecisionTrace plan reconciliation
 
 Compared the [original DecisionTrace runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md) and [release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md) with the v0.6 repository, implementation, tests, and CI. The [completion plan](05_DECISIONTRACE_COMPLETION_PLAN.md) records phase-by-phase evidence, the missing retrieval/model/extraction/MVP/security/evaluation/release work, dependencies, and exit checks. V0.6 is a working bounded demo and a partial Phase 4 increment, not the runbook's full alpha MVP. The immediate correction is new outbox event handling: the worker currently dead-letters several event types emitted by connector, revocation, and change-watch mutations. Phase 3's independent label review and real OIDC issuer test also remain open.

@@ -1,22 +1,25 @@
 # Known Limitations and Open Questions
 
-## Current limitations (2026-09-27)
+## Current limitations (2026-10-26)
 
-- Phase 0 is closed only as a documentation gate. No application code, API, UI, worker, PostgreSQL schema, migrations, seed generator, tests, Compose stack, CI, telemetry, or release exists.
-- The portfolio source baseline and Phase 0 documentation are merged into the default `main` branch through PR #1. The PR used a merge commit rather than the planned squash; history is retained and future merge policy must prevent recurrence.
-- The blueprint is present and reviewed; ADR-002 retains the earlier missing-source decision as superseded history.
-- No real users or customers were interviewed. All five role inputs are synthetic hypotheses, not evidence.
-- No performance, accuracy, cost, security, isolation, reliability, restore, or release gate has been measured or passed.
-- License, maintainer ownership/review, local authentication/session design, money representation, date/timezone and effective-date semantics, retention, large-result artifact storage, exact REST schemas, risk thresholds, and dataset realism remain design decisions.
-- ₹0 target excludes unplanned paid dependencies/cloud services but real local hardware/electricity has an opportunity cost; later cost model should disclose assumptions.
-- No RuleTwin contract is published; BoundaryOps integration is prohibited until RuleTwin and DecisionTrace tagged v1 contracts/examples and mock consumer contract tests exist.
+- This repository is a portfolio index and contains no product runtime. RuleTwin and DecisionTrace code, product contracts, tests and exact validation records live in separate repositories.
+- No real users or customers were interviewed. All five role inputs are synthetic hypotheses, not empirical discovery evidence.
+- RuleTwin is a validated local synthetic-data demonstration, not an externally hosted pilot or production-ready service. Its first three phases and bounded Phase 4A increment are complete, but the original full Phase 4–8 gates remain open.
+- RuleTwin currently supports one deterministic rounding family and two fictional tenants. Four planned rule families, a third tenant, dependency analysis, richer impact dimensions, webhook delivery, evidence reproduction and pagination are incomplete.
+- RuleTwin's provider-neutral OIDC verification foundation is awaiting merge in PR #22. Provider-specific browser login/logout, pilot-user provisioning and real-provider evidence are incomplete.
+- Full exposed-surface isolation, resource/rate controls, centralized alerts, hosted deployment, external secret storage, backup/restore/rollback, SBOM/release artifacts, accessibility, the 40+ case evaluation corpus and reference-profile performance remain open.
+- No RuleTwin release candidate, immutable product release, tagged evidence contract or `v1.0.0` exists. Slice-level evidence must not be presented as passing a full release hard gate.
+- DecisionTrace is being developed independently under a maintainer-approved parallel exception. RuleTwin/DecisionTrace integration remains prohibited until stable versioned contracts and consumer tests exist.
+- BoundaryOps runtime remains prohibited until both upstream products have stable tagged contracts, examples and passing mock consumer tests.
+- The ₹0 target excludes unplanned paid dependencies/cloud services, but local hardware/electricity and any future hosting/domain/identity-provider costs must be disclosed.
 
 ## Mitigation and decision gates
 
-- Keep all runtime behavior and completion claims explicitly marked planned.
-- Keep runtime and product-owned contracts out of this portfolio index; establish the separate RuleTwin repository before authoritative Phase 1 artifacts are created.
-- Obtain explicit approval before any commit, push, repository creation, pull request, or GitHub setting change.
-- Resolve Phase 1 design questions with ADRs, threat-to-test mapping, OpenAPI, data model, and evidence.
+- Keep slice, pilot, phase and production claims distinct and linked to exact evidence.
+- Keep runtime and product-owned contracts in the separate product repositories; this repository records governance and milestone summaries.
+- Update portfolio status after every product milestone so the index does not lag implementation.
+- Resolve hosting, domain/TLS, invited identities/roles, backup retention, RPO/RTO, availability and visibility before closing the RuleTwin pilot deployment gate.
+- Require clean-runner CI, tenant-isolation, recovery, security, performance, accessibility and immutable release evidence before promotion.
 - Never relax hard tenant-isolation, unsafe execution, dangerous false-safe, audit, or approval gates to satisfy a demo.
 
 ## Change log
