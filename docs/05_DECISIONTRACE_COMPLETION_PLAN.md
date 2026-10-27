@@ -1,7 +1,7 @@
 # DecisionTrace completion plan and runbook reconciliation
 
 **Reviewed:** 2026-10-27
-**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`b50a540`](https://github.com/Preethamreddy29/decisiontrace/commit/b50a540007dd0a4c3e10ecda64d4b55e8fc0a1a9). Its [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) passed. This is a scope and evidence assessment, not a v1 release claim.
+**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`24ca3b0`](https://github.com/Preethamreddy29/decisiontrace/commit/24ca3b00be9487f038a4409594a0217b41cd93ed). Its [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40436054619) passed. This is a scope and evidence assessment, not a v1 release claim.
 
 ## Assessment
 
@@ -13,7 +13,7 @@ The implementation diverged from the full runbook by delivering a deterministic 
 |---|---|---|
 | 0 — Charter/corpus | Licensed six-month fictional seed, 14 source versions, 25 specified questions, checksum manifest | Passed seed gate; 100+ reviewed gold set is later work. |
 | 1 — Design/threats | Temporal model, API/event drafts, ten ADRs, threat map | Design gate passed; contracts and threat tests must track the expanded runtime. |
-| 2 — Foundation | PostgreSQL/API/worker/web Compose, checksummed migrations, seed, health and CI; authorized temporal full-text chunk search | Local core passed; pgvector, artifact storage, local model profile, full ingestion states, and telemetry remain. |
+| 2 — Foundation | PostgreSQL/API/worker/web Compose, checksummed migrations, seed, health and CI; authorized temporal full-text chunk search and dry-run-first rebuild | Local core passed; pgvector, artifact storage, local model profile, full ingestion states, and telemetry remain. |
 | 3 — Temporal cited answer | Valid/recorded-time controls, approved decision versions, bounded exact citations, abstention and a fictional demo | Preview works; hybrid retrieval, structured generation, verifier pipeline, independently reviewed labels, and real issuer test remain. |
 | 4 — Full MVP | Markdown/transcript/JSON intake, source sections, three change-watch relation types, independent approval, source revocation | Partial; extraction review, complete decision fields/relations, full source adapters, semantic drift, dashboard, exports, and 100+ questions remain. |
 | 5 — Security/failure | Server-derived tenant/role, input bounds, some isolation/revocation checks | Partial; full authorization matrix, lineage deletion/retention, adversarial set, race/failure drills, and degraded-mode guarantees remain. |
@@ -47,4 +47,4 @@ Each stage should be a focused release candidate with a clean CI run, reproducib
 
 ## First next checkpoint
 
-Finish Stage A's manual UI and clean local run. Continue Stage B from the [authorized full-text chunk search](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v08-full-text-foundation.md) to a pinned vector profile, compatible rebuild, and measured hybrid retrieval. Then demonstrate one end-to-end source through the versioned full-text/vector pipeline with authorized temporal retrieval (Stage B/C vertical slice). Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.
+Finish Stage A's manual UI and clean local run. Continue Stage B from the [authorized full-text chunk search](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v08-full-text-foundation.md) and [full-text index rebuild](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v10-index-rebuild.md) to a pinned vector profile, compatible vector rebuild, and measured hybrid retrieval. Then demonstrate one end-to-end source through the versioned full-text/vector pipeline with authorized temporal retrieval (Stage B/C vertical slice). Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.

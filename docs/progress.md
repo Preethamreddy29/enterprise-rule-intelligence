@@ -1,5 +1,9 @@
 # Progress and Status
 
+## Update — 2026-10-27, DecisionTrace index maintenance
+
+DecisionTrace now has a [dry-run-first full-text index rebuild](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v10-index-rebuild.md). Explicit apply repairs missing or mismatched exact chunks and removes stale revoked chunks under tenant evidence locks; seed loading uses the same locks. The live drill deletes a valid chunk, inserts a stale revoked chunk, proves dry-run detection, then verifies repair and exact authorized retrieval. The [CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40436054619) passed at `24ca3b0`, including the prior restore smoke. The [completion plan](05_DECISIONTRACE_COMPLETION_PLAN.md) retains manual UI/local stack review and the vector/model/hybrid pipeline as open work.
+
 ## Update — 2026-10-27, DecisionTrace recovery smoke
 
 A [same-server backup/restore smoke](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v09-restore-smoke.md) now creates and revokes a disposable source through the API, restores a PostgreSQL backup into a separate database, replays checked migrations, and checks that live evidence opens while seeded and API-revoked evidence remain unavailable. The restored revocation's audit and local outbox records remain present. The [CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) passed at `b50a540`. Manual UI review and a clean local stack run remain for Stage A; a clean-host recovery drill remains for release.
