@@ -1,5 +1,9 @@
 # Progress and Status
 
+## Update — 2026-10-27, DecisionTrace recovery smoke
+
+A [same-server backup/restore smoke](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v09-restore-smoke.md) now creates and revokes a disposable source through the API, restores a PostgreSQL backup into a separate database, replays checked migrations, and checks that live evidence opens while seeded and API-revoked evidence remain unavailable. The restored revocation's audit and local outbox records remain present. The [CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) passed at `b50a540`. Manual UI review and a clean local stack run remain for Stage A; a clean-host recovery drill remains for release.
+
 ## Update — 2026-10-27, DecisionTrace reliability and search foundation
 
 DecisionTrace's local outbox now validates all current event types, versions and payloads, with safe replay of known valid dead letters. The [outbox CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) passed. Tenant-scoped ordering between evidence reads and revocation passed the [concurrency CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661). An internal PostgreSQL full-text search now indexes exact source chunks and filters candidates by tenant, role, valid time, recorded time, supersession and revocation. The [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40386335864) passed at `d752ac7`, including the search check and zero stored chunks for a revoked seed source. The existing deterministic demo answer path remains the baseline. The [completion plan](05_DECISIONTRACE_COMPLETION_PLAN.md) records the remaining Stage A manual/recovery checks, Stage B vector/model/telemetry work, and later v1 gates. No full MVP or v1 gate is claimed.

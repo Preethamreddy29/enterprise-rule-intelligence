@@ -1,7 +1,7 @@
 # DecisionTrace completion plan and runbook reconciliation
 
 **Reviewed:** 2026-10-27
-**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`d752ac7`](https://github.com/Preethamreddy29/decisiontrace/commit/d752ac793281ca6a71ccbc291e346a570beb3079). Its [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40386335864) passed. This is a scope and evidence assessment, not a v1 release claim.
+**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`b50a540`](https://github.com/Preethamreddy29/decisiontrace/commit/b50a540007dd0a4c3e10ecda64d4b55e8fc0a1a9). Its [fresh-stack CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) passed. This is a scope and evidence assessment, not a v1 release claim.
 
 ## Assessment
 
@@ -22,7 +22,7 @@ The implementation diverged from the full runbook by delivering a deterministic 
 
 ## Stage A reliability checkpoint
 
-The worker now validates and acknowledges every current local event type; unknown, malformed, and future-version events dead-letter by design. A safe replay command handles known valid old dead letters, and the local outbox schema matches its runtime envelope. [Outbox CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) and [concurrent revocation CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661) pass. `done` means local validation and acknowledgement, not external delivery. Manual UI review, a clean local stack run, and backup/restore revocation evidence remain before Stage A can be treated as fully closed.
+The worker now validates and acknowledges every current local event type; unknown, malformed, and future-version events dead-letter by design. A safe replay command handles known valid old dead letters, and the local outbox schema matches its runtime envelope. [Outbox CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) and [concurrent revocation CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661) pass. A [same-server restore smoke](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) preserves a mutation-created revocation, audit/outbox lineage, and authorized live evidence. `done` means local validation and acknowledgement, not external delivery. Manual UI review and a clean local stack run remain before Stage A can be treated as fully closed; clean-host recovery is a later release gate.
 
 ## Build sequence and exit gates
 
@@ -47,4 +47,4 @@ Each stage should be a focused release candidate with a clean CI run, reproducib
 
 ## First next checkpoint
 
-Finish Stage A's manual and recovery checks. Continue Stage B from the [authorized full-text chunk search](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v08-full-text-foundation.md) to a pinned vector profile, compatible rebuild, and measured hybrid retrieval. Then demonstrate one end-to-end source through the versioned full-text/vector pipeline with authorized temporal retrieval (Stage B/C vertical slice). Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.
+Finish Stage A's manual UI and clean local run. Continue Stage B from the [authorized full-text chunk search](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v08-full-text-foundation.md) to a pinned vector profile, compatible rebuild, and measured hybrid retrieval. Then demonstrate one end-to-end source through the versioned full-text/vector pipeline with authorized temporal retrieval (Stage B/C vertical slice). Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.
