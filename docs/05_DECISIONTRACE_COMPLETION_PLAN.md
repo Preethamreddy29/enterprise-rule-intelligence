@@ -1,7 +1,7 @@
 # DecisionTrace completion plan and runbook reconciliation
 
 **Reviewed:** 2026-11-19
-**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`354fa79`](https://github.com/Preethamreddy29/decisiontrace/commit/354fa79f1571637349c4964eb823cd4d6b3d6977). Its [fresh-stack branch CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/44442834654) passed. This is a scope and evidence assessment, not a v1 release claim.
+**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`3ac9fb7`](https://github.com/Preethamreddy29/decisiontrace/commit/3ac9fb79b6cd8f8135c42f5147daa919912ddca0). Its [fresh-stack main CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/44443407605) passed. This is a scope and evidence assessment, not a v1 release claim.
 
 ## Assessment
 
