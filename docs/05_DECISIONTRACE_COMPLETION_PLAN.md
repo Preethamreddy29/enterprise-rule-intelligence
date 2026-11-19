@@ -1,7 +1,7 @@
 # DecisionTrace completion plan and runbook reconciliation
 
-**Reviewed:** 2026-11-18
-**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`fdb0d03`](https://github.com/Preethamreddy29/decisiontrace/commit/fdb0d03e8540b8f3d5301cd5b1bf742f7a047244). Its [fresh-stack main CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/44352515587) passed. This is a scope and evidence assessment, not a v1 release claim.
+**Reviewed:** 2026-11-19
+**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`354fa79`](https://github.com/Preethamreddy29/decisiontrace/commit/354fa79f1571637349c4964eb823cd4d6b3d6977). Its [fresh-stack branch CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/44442834654) passed. This is a scope and evidence assessment, not a v1 release claim.
 
 ## Assessment
 
@@ -22,11 +22,15 @@ The implementation diverged from the full runbook by delivering a deterministic 
 
 ## Stage A reliability checkpoint
 
-The worker now validates and acknowledges every current local event type; unknown, malformed, and future-version events dead-letter by design. A safe replay command handles known valid old dead letters, and the local outbox schema matches its runtime envelope. [Outbox CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) and [concurrent revocation CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661) pass. A [same-server restore smoke](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) preserves a mutation-created revocation, audit/outbox lineage, and authorized live evidence. `done` means local validation and acknowledgement, not external delivery. Manual UI review and a clean local stack run remain before Stage A can be treated as fully closed; clean-host recovery is a later release gate.
+The worker now validates and acknowledges every current local event type; unknown, malformed, and future-version events dead-letter by design. A safe replay command handles known valid old dead letters, and the local outbox schema matches its runtime envelope. [Outbox CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40367001560) and [concurrent revocation CI](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40384037661) pass. A [same-server restore smoke](https://github.com/Preethamreddy29/decisiontrace/actions/runs/40434501630) preserves a mutation-created revocation, audit/outbox lineage, and authorized live evidence. `done` means local validation and acknowledgement, not external delivery. The 2026-11-19 persistent-volume upgrade, full local preflight, and browser walkthrough passed. Clean-host recovery is a later release gate.
 
 ## 2026-11-18 retrieval checkpoint
 
 [Vector foundation](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v11-vector-foundation.md) and [hybrid candidate baseline](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/v12-hybrid-candidates.md) passed fresh-stack CI. The same run exercised existing demo, outbox, revocation, index rebuild, and restore gates. Both candidate paths apply tenant, role, valid/recorded-time, supersession, revocation, and source-scope filters before ranking; the hybrid calculation shares one database snapshot. This is **partial DT-05 evidence**, not a general answer or semantic retrieval score. The interactive resolver still reads authorized source versions directly. Local Docker was unavailable, so a manual UI walkthrough and existing-volume upgrade rehearsal remain open.
+
+## 2026-11-19 local upgrade and retrieval diagnostic checkpoint
+
+The existing fictional demo database was backed up before migration 009. The full preflight passed against that persistent volume, including seeded questions, source workflow, tenant and revocation checks, index rebuild, candidate paths, and same-server restore. A browser walkthrough confirmed local sign-in, the 10 May historical answer, and exact citation drill-down. A 25-question, 75-call-per-path timing diagnostic exposed zero full-text candidates under the previous all-terms query; the corrected full-text path now returns candidates while retaining SQL authorization. On one WSL2 machine the final diagnostic reported P95 24.117 ms full-text, 26.437 ms token-set vector, and 35.374 ms rank fusion. This measures candidate latency only; independent relevance, answer quality, semantic model, and retrieval-backed verification remain open.
 
 ## Build sequence and exit gates
 
@@ -51,4 +55,4 @@ Each stage should be a focused release candidate with a clean CI run, reproducib
 
 ## First next checkpoint
 
-Finish Stage A's manual UI and clean local run, including an existing-volume migration rehearsal. Continue Stage B with a pinned semantic model adapter, artifact storage, stage traces, and resumable ingestion. Measure the current lexical/vector/rank-fusion candidates on a reviewed set before using them in Stage C answers; add structured generation and a deterministic claim/citation verifier. Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.
+Stage A's existing-volume migration rehearsal and manual UI check passed. Continue Stage B with a pinned semantic model adapter, artifact storage, stage traces, and resumable ingestion. Measure the current lexical/vector/rank-fusion candidates on a reviewed set before using them in Stage C answers; add structured generation and a deterministic claim/citation verifier. Do not mark the Phase 4 MVP or any release-matrix hard gate Passed from the current preview results.
