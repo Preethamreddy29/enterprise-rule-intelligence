@@ -1,7 +1,9 @@
 # DecisionTrace completion plan and runbook reconciliation
 
-**Reviewed:** 2026-11-19
-**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`3ac9fb7`](https://github.com/Preethamreddy29/decisiontrace/commit/3ac9fb79b6cd8f8135c42f5147daa919912ddca0). Its [fresh-stack main CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/44443407605) passed. This is a scope and evidence assessment, not a v1 release claim.
+**Reviewed:** 2026-11-20
+**Reference:** [DecisionTrace implementation runbook](02_DECISIONTRACE_IMPLEMENTATION_RUNBOOK.md), [portfolio release evidence matrix](04_RELEASE_EVIDENCE_MATRIX.md), and the separate DecisionTrace repository at commit [`10b1277`](https://github.com/Preethamreddy29/decisiontrace/commit/10b127730abe6df687dc33ab4508206bbdc424c0). Its [fresh-stack main CI run](https://github.com/Preethamreddy29/decisiontrace/actions/runs/44659947945) passed. This is a scope and evidence assessment, not a v1 release claim.
+
+For the current runtime architecture, data flow, requirement-by-requirement status, branch ancestry, verification commands, and detailed v1 exit work, see the [DecisionTrace implementation reference](https://github.com/Preethamreddy29/decisiontrace/blob/main/docs/release/implementation-reference.md). This portfolio file retains the runbook reconciliation and milestone sequence.
 
 ## Assessment
 
